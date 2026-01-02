@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lost & Found</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="bg-blob blob1"></div>
+<div class="bg-blob blob2"></div>
+
+<header class="site-header">
+  <h1>Lost & Found</h1>
+  <p>A calm place for lost things to find their way back.</p>
+</header>
+
+<div class="app">
+
+  <!-- REPORT PANEL -->
+  <section class="panel report">
+    <h2>📋 Make a report</h2>
+
+    <form onsubmit="submitItem(); return false;">
+      <select id="type">
+        <option value="lost">Lost</option>
+        <option value="found">Found</option>
+      </select>
+
+      <select id="category">
+        <option>Phone</option>
+        <option>ID Card</option>
+        <option>Bag</option>
+        <option>Book</option>
+        <option>Water Bottle</option>
+        <option>Other</option>
+      </select>
+
+      <input id="description" placeholder="Describe the item" required>
+      <input id="location" placeholder="Where was it lost or found?" required>
+      <input id="contact" placeholder="Your contact details" required>
+
+      <input id="image" type="file" accept="image/*">
+      <img id="preview">
+
+      <button type="submit">Submit report</button>
+    </form>
+  </section>
+
+  <!-- MATCHES PANEL -->
+  <section class="panel matches">
+    <h2>🔍 Possible matches</h2>
+    <div id="matches">
+      <p class="empty">
+        Nothing yet.<br>
+        But every report increases the chance of a return.
+      </p>
+    </div>
+  </section>
+
+</div>
+
+<!-- IMAGE MODAL -->
+<div id="imageModal" class="image-modal" onclick="closeModal()">
+  <img id="modalImage">
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
